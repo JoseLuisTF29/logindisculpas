@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://media.admagazine.com/photos/65ca727d564155b0f3dcdae4/16:9/w_2560%2Cc_limit/Rosas%252014%2520febrero.jpg') no-repeat center center fixed; /* Cambia la URL por la de tu imagen de fondo de rosas */
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2; /* Para asegurar que el login esté por encima del fondo */
+}
+
+h1 {
+    color: #e63946;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    background-color: #ff6f91; /* Rosa más intenso */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #d5006d; /* Color de hover */
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Asegura que la tarjeta esté por encima de las rosas */
+}
+
+#secretMessage {
+    margin-top: 20px;
+    color: #2a9d8f;
+    font-weight: bold;
+}
+
+.falling-roses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite que los clics pasen a la tarjeta */
+    z-index: 1; /* Asegura que las rosas estén detrás de la tarjeta */
+}
+
+.rose {
+    position: absolute;
+    width: 30px; /* Ajusta el tamaño de las rosas */
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Estilos para el fondo del login con corazones */
+body::before {
+    content: '';
+    background: url('https://img.freepik.com/fotos-premium/cerca-corazones-sobre-fondo-corazon-completo-san-valentin-o-dia-mujer-dia-madre-representacion-3d_494516-743.jpg') no-repeat center center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3; /* Opacidad de fondo */
+    z-index: 1; /* Asegura que esté detrás del login */
+}
